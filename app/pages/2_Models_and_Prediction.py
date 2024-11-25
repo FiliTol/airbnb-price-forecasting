@@ -23,14 +23,18 @@ hide_default_format = """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 st.title("Predicting listings prices")
 
-testing = pd.read_csv("data/testing_df.csv")
-testing.drop(columns=testing.columns[0], axis=1,  inplace=True)
-testing = testing.loc[testing["price"]< 1000, :]
-train_set, test_set = train_test_split(testing, test_size=0.2, random_state=874631)
-X_train = train_set.drop(["price"], axis=1)
-X_test = test_set.drop(["price"], axis=1)
-y_train = train_set["price"]
-y_test = test_set["price"]
+
+@st.cache_data
+def load_data():
+    testing = pd.read_csv("data/testing_df.csv")
+    testing.drop(columns=testing.columns[0], axis=1, inplace=True)
+    testing = testing.loc[testing["price"] < 1000, :]
+    train_set, test_set = train_test_split(testing, test_size=0.2, random_state=874631)
+    X_train = train_set.drop(["price"], axis=1)
+    X_test = test_set.drop(["price"], axis=1)
+    y_train = train_set["price"]
+    y_test = test_set["price"]
+    return X_train, X_test, y_train, y_test
 
 
 @st.cache_resource
@@ -51,6 +55,8 @@ def load_models():
 
 
 models = load_models()
+X_train, X_test, y_train, y_test = load_data()
+
 
 st.markdown("## Choose model and run prediction on test data")
 prediction_text = """
