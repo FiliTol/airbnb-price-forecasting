@@ -115,7 +115,7 @@ overrides==7.7.0
 packaging==24.1
 pandarallel==1.6.5
 pandas==2.2.2
-pandas-profiling==3.6.6
+pandas-profiling
 pandocfilters==1.5.1
 parso==0.8.4
 pathspec==0.12.1
