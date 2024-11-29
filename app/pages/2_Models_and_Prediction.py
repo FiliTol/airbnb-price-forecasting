@@ -172,7 +172,7 @@ if st.button("Predict listings prices"):
         st.markdown("### Loss Curve")
 
         st.markdown("""
-        The following visual shows how the loss (or error) of a model changes over time, plotted against the number of training epochs.
+        The following visual shows how the process of loss function optimization changes throughtout time, plotted against the number of training epochs.
         Loss is a measure of how well the model's predictions match the actual target values and it is calculated using a loss function.
         """)
         #with graph1:
@@ -209,7 +209,7 @@ if st.button("Predict listings prices"):
         The more the points are evenly spread throughout the space, the more it indicates that there is no relationship
         between the predicted value and the errors in executing the prediction.
          
-        This graph to see how much variance is in the model.
+        This graph is used to observe how much variance is in the model.
         """)
         #with graph3:
         display = PredictionErrorDisplay(y_true=y_test, y_pred=pred)
@@ -241,7 +241,7 @@ if st.button("Predict listings prices"):
         The more the points are evenly spread throughout the space, the more it indicates that there is no relationship
         between the predicted value and the errors in executing the prediction.
 
-        This graph to see how much variance is in the model.
+        This graph is used in order to observe how much variance is in the model.
         """)
         #with graph2:
         display = PredictionErrorDisplay(y_true=y_test, y_pred=pred)

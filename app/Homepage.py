@@ -7,7 +7,7 @@ st.set_page_config(
 
 st.write("# Welcome to the Italian AirBnB pricing App!")
 
-st.sidebar.success("Select a page above.")
+st.sidebar.success("Select a page from the list above.")
 
 st.markdown(
     """
