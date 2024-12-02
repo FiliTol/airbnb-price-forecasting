@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import random
+import json
+from streamlit_folium import st_folium
+import folium
 from app.custom.custom_functions import random_color_generator
 
 
@@ -93,6 +96,14 @@ filtered_graph = graph[
     ]
 
 st.metric("Selected listings:", value=f"{filtered_graph.shape[0]}/{graph.shape[0]}")
-st.map(filtered_graph,
-       size=5,
-       use_container_width=False)
+
+with open('data/mappings/it.json') as f:
+    italy_geojson = json.load(f)
+
+
+
+#st.map(filtered_graph,
+#       size=5,
+#       use_container_width=False)
+
+
