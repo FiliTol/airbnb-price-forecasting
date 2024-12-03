@@ -114,7 +114,7 @@ def add_tourism_data(df: pd.DataFrame):
 
 def concatenate_listings_datasets() -> pd.DataFrame:
     """
-    Given a folder path, return the dataframe that is the
+    Returns the dataframe that is the
     concatenation of the csv in the folder path
     :return: dataframe containing all city dataframes
     """
