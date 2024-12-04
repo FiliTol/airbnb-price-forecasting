@@ -1,5 +1,10 @@
 # Predicting AirBnB listing prices: a Machine Learning approach
 
+## Authors
+
+- Filippo Tolin
+- Marco Magro
+
 ## Objective
 
 The primary objective of this project is to forecast Airbnb listings prices across various locations in Italy.
